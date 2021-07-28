@@ -5,7 +5,14 @@ The `watch` command can see only now.
 `mitail` is very simple commands, `mitail` has feature that is only print execution output to stdio.
 
 ```console
-▶ ./mitail -t  'dig @8.8.8.8 google.co.jp | grep -e "Query time" -e "status: " | tr -d "\n" | cut -d" " -f5,6,9,10,11'
+$ ./mitail -h
+Usage of ./mitail:
+  -e	output stderr
+  -n int
+    	milliseconds to wait between updates (default 1000)
+  -t	output with timestap
+
+$ ./mitail -t  'dig @8.8.8.8 google.co.jp | grep -e "Query time" -e "status: " | tr -d "\n" | cut -d" " -f5,6,9,10,11'
 2021-07-28T22:40:10+09:00	status: NOERROR, Query time: 13
 2021-07-28T22:40:11+09:00	status: NOERROR, Query time: 9
 2021-07-28T22:40:12+09:00	status: NOERROR, Query time: 9
