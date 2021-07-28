@@ -21,7 +21,7 @@ func main(){
 		ps, err := exec.Command("sh", cmd...).CombinedOutput()
 		output := strings.TrimRight(string(ps), "\n")
 		if *withTimestamp{
-			fmt.Printf("%s\t", time.Now())
+			fmt.Printf("%s\t", time.Now().Format("2006-01-02T15:04:05+09:00"))
 		}
 		if *outPutError {
 			fmt.Printf("%s\n", output)
